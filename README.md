@@ -11,7 +11,7 @@ Folgende Ressourcen sind bereits implementiert:
 | No. | HTTP Verb | Path      | Expect (JSON) | Returns (JSON) | HTTP Status | Description  |
 |-----|-----------|-----------|---------------|----------------|-------------|--------------|
 |1    |GET        |/          |Nothing        |Welcome string  |200(success) |Welcome string|
-|2    |GET        |/todos     |Nothing        |an aaray with todo enteries  |200(success) |Welcome string|
-|3    |GET        |/todos/:id |Nothing        |Welcome string  |200(success) |Welcome string|
-|4    |POST       |/todos     |A todo entry   |Welcome string  |200(success) |Welcome string|
+|2    |GET        |/todos     |Nothing        |an aaray with todo enteries  |200(success) |Get a list of todos|
+|3    |GET        |/todos/:id |Nothing        |The todo specified ID  |200(success) or 404 (not found) |Get todo by ID|
+|4    |POST       |/todos     |A todo entry   |The new todo entry  |201(created) 400 (bad request) |create new todo|
 
