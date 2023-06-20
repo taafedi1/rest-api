@@ -11,19 +11,7 @@ Folgende Ressourcen sind bereits implementiert:
 | No. | HTTP Verb | Path      | Expect (JSON) | Returns (JSON) | HTTP Status | Description  |
 |-----|-----------|-----------|---------------|----------------|-------------|--------------|
 |1    |GET        |/          |Nothing        |Welcome string  |200(success) |Welcome string|
-|2    |GET        |/todos     |Nothing        |an aaray with\  |200(success) |Welcome string|
-|     |           |           |               |todo enteries   |             |              |
+|2    |GET        |/todos     |Nothing        |an aaray with todo enteries  |200(success) |Welcome string|
 |3    |GET        |/todos/:id |Nothing        |Welcome string  |200(success) |Welcome string|
 |4    |POST       |/todos     |A todo entry   |Welcome string  |200(success) |Welcome string|
 
-+-------------------------------------+-------------------------------------+-------------------------------------+
-|Spalte links                         |Spalte rechts                        |Spalte mittig                        | 
-+:====================================+====================================:+:===================================:+
-|Normaler Inhalt                      |Normaler Inhalt                      |Ein Text, der sich                   | 
-|                                     |                                     |sich über mehrere Zeilen erstreckt   | 
-+-------------------------------------+-------------------------------------+-------------------------------------+
-|Normaler Inhalt                      |Ein Text, der sich\                  |Normaler Inhalt                      | 
-|                                     |sich umbricht                        |                                     | 
-+-------------------------------------+-------------------------------------+-------------------------------------+
-|Normaler Inhalt                      |Normaler Inhalt                      |Normaler Inhalt                      | 
-+-------------------------------------+-------------------------------------+-------------------------------------+
