@@ -34,7 +34,7 @@ Hier ein Beispiel für den 4. Endpunkt:
 Anmerkung: Hier musst du entsprechend einen Body konfigurieren und dort das neu zu erstellende Todo
 JSON Objekt drin aufführen.
 
-## Aufgabe 7: Todo REST Backend II
+## Aufgabe 7: Todo REST Backend II [v2.0.0]
 Nun sollen die Endpunkte erweitert werden. Neuerdings soll mittels Put eine bestehende Todo Ressource
 verändert werden können. Dieser neue Endpunkt ist in der folgenden Tabelle auf Zeile 5 aufgeführt:
 | No. | HTTP Verb | Path      | Expect (JSON) | Returns (JSON) | HTTP Status | Description  |
