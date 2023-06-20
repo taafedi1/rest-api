@@ -145,3 +145,46 @@ func ToBool(info string) bool {
 	aBool, _ := strconv.ParseBool(info)
 	return aBool
 }
+
+// UpdateTodo stores the passed todo in the csv file and returns the stored todo
+func (c CsvFileTodoPersistence) UpdateTodoById(todo models.Todo) (models.Todo, error) {
+	//Get all Todos that exist already
+	todos, err := models.ReadTodos()
+	if err != nil {
+		return models.Todo{}, err
+	}
+
+	var tempTodos []models.Todo
+	//Check if Todo with the same ID exists already and replace it with new values
+	for _, todo1 := range todos {
+		if todo1.Id == todo.Id {
+			tempTodos = append(tempTodos, todo)
+		} else {
+			tempTodos = append(tempTodos, todo1)
+		}
+	}
+
+	//Empty out file
+	os.Truncate(FileName, 0)
+
+	file, err := os.OpenFile(FileName, os.O_WRONLY, 0644)
+	if err != nil {
+		return models.Todo{}, err
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+	for _, todo = range tempTodos {
+		err = writer.Write(todo.Serialize())
+		if err != nil {
+			return models.Todo{}, err
+		}
+	}
+	writer.Flush()
+	err = file.Close()
+	if err != nil {
+		return models.Todo{}, err
+	}
+
+	return todo, nil
+}

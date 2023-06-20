@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/julienschmidt/httprouter"
 	"log"
 	"net/http"
 	"todo-rest-backend/models"
 	"todo-rest-backend/models/persistence"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 const BackendHostUrl string = ":8080"
@@ -23,6 +24,7 @@ func Run() {
 	router.GET("/todos", TodosGet)
 	router.GET("/todos/:id", TodoGetById)
 	router.POST("/todos", TodoPost)
+	router.PUT("/todos/:id", TodoPutById)
 
 	err := http.ListenAndServe(BackendHostUrl, router)
 	log.Fatal(err)
@@ -119,4 +121,38 @@ func decodeTodo(request *http.Request, todo *models.Todo) error {
 		return err
 	}
 	return nil
+}
+
+// TodoPutById Handler for updating a todo by ID
+func TodoPutById(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	writer.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	//create a Todo
+	var newToDoValues models.Todo
+	//save new Values to the newToDoValues Variable
+	err := decodeTodo(request, &newToDoValues)
+	if err != nil {
+		handleError(writer, http.StatusBadRequest, "invalid Body")
+		return
+	}
+
+	//store the id from url parameters
+	id := params.ByName("id")
+	//Check for existence of id
+	_, err = models.ReadTodoById(id)
+	if err != nil {
+		handleError(writer, http.StatusNotFound, "Id doesn't exist")
+	}
+
+	todoUpdated, err := models.UpdateTodoById(newToDoValues)
+	if err != nil {
+		handleError(writer, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	writer.WriteHeader(http.StatusOK)
+	response := models.JsonExtendedResponse{Data: todoUpdated}
+	err = json.NewEncoder(writer).Encode(response)
+	if err != nil {
+		panic(err)
+	}
 }

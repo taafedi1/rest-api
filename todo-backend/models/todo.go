@@ -82,3 +82,23 @@ func SortTodosAfterIdAscending(todos []Todo) []Todo {
 	})
 	return todos
 }
+
+// UpdateTodoById updates the values of the Todo with the matching id
+func UpdateTodoById(newToDoValues Todo) (Todo, error) {
+	if todoPersistence == nil {
+		return Todo{}, errors.New("todo persistence must not be nil")
+	}
+
+	_, err := todoPersistence.UpdateTodoById(newToDoValues)
+	if err != nil {
+		return Todo{}, err
+	}
+
+	todoUpdated, err := ReadTodoById(newToDoValues.Id)
+	if err != nil {
+		return Todo{}, err
+	}
+
+	//return updated todo
+	return todoUpdated, err
+}

@@ -5,4 +5,5 @@ type TodoPersistence interface {
 	ReadTodos() ([]Todo, error)
 	ReadTodoById(string) (Todo, error)
 	CreateTodo(Todo) (Todo, error)
+	UpdateTodoById(Todo) (Todo, error)
 }
