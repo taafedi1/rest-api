@@ -12,7 +12,7 @@ Folgende Ressourcen sind bereits implementiert:
 |-----|-----------|-----------|---------------|----------------|-------------|--------------|
 |1    |GET        |/          |Nothing        |Welcome string  |200(success) |Welcome string|
 |2    |GET        |/todos     |Nothing        |an aaray with\  |200(success) |Welcome string|
-                                              |todo enteries   
+|     |           |           |               |todo enteries   |             |              |
 |3    |GET        |/todos/:id |Nothing        |Welcome string  |200(success) |Welcome string|
 |4    |POST       |/todos     |A todo entry   |Welcome string  |200(success) |Welcome string|
 
