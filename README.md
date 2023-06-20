@@ -1,6 +1,6 @@
 # Aufgaben für die REST API 
 
-## Aufgabe 6: Todo REST Backend I `v1.0.0`
+## Aufgabe 6: Todo REST Backend I v1.0.0
 Dieser Aufgabe beiliegend bekommst du durch den Dozenten ein bereits lauffähiges Go Todo REST Ba-
 ckend, wo ein REST Backend für eine Todo Liste implementiert ist. Dieses Projekt basiert auf dem Http-
 Router als leichtgewichtiger, hochleistungsfähiger HTTP-Request-Router. Zudem hat diese Applikation
