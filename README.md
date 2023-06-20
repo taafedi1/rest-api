@@ -8,7 +8,11 @@ bereits eine Datenpersistenz mittels CSV-Datei implementiert und ist nach dem MV
 tiert, wobei keine View-Komponente hier zum Einsatz kommt, da es nur ein Backend ist.
 Folgende Ressourcen sind bereits implementiert:
 
-| No. | HTTP Verb | Path | Expect (JSON) | Returns (JSON) | HTTP Status | Description  |
-|-----|-----------|------|---------------|----------------|-------------|--------------|
-|1    |GET        |/     |Nothing        |Welcome string  |200(success) |Welcome string|
+| No. | HTTP Verb | Path      | Expect (JSON) | Returns (JSON) | HTTP Status | Description  |
+|-----|-----------|-----------|---------------|----------------|-------------|--------------|
+|1    |GET        |/          |Nothing        |Welcome string  |200(success) |Welcome string|
+|2    |GET        |/todos     |Nothing        |an aaray with\  |200(success) |Welcome string|
+                                              |todo enteries   
+|3    |GET        |/todos/:id |Nothing        |Welcome string  |200(success) |Welcome string|
+|4    |POST       |/todos     |A todo entry   |Welcome string  |200(success) |Welcome string|
 
