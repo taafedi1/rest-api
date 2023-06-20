@@ -16,3 +16,16 @@ Folgende Ressourcen sind bereits implementiert:
 |3    |GET        |/todos/:id |Nothing        |Welcome string  |200(success) |Welcome string|
 |4    |POST       |/todos     |A todo entry   |Welcome string  |200(success) |Welcome string|
 
+--------------------------------------------------------
+Spalte links       Spalte rechts   Spalte mittig
+---------------- ---------------- ----------------------
+In dieser Zelle\   Hier nicht!     In dieser Zelle wird 
+werden zwei\                       kein Umbruch gewagt, 
+Umbrüche gewagt.                   aber mehr Text 
+                                   geschrieben.      
+
+Zeile 2          Zeile 2          Zeile 2
+
+Hier wird eine\    Hier  nicht!    Hier auch nicht!
+Zeile gebrochen.
+--------------------------------------------------------
