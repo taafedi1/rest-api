@@ -44,6 +44,7 @@ verändert werden können. Dieser neue Endpunkt ist in der folgenden Tabelle auf
 |3    |GET        |/todos/:id |Nothing        |The todo specified ID  |200(success) or 404 (not found) |Get todo by ID|
 |4    |POST       |/todos     |A todo entry   |The new todo entry  |201(created) 400 (bad request) |create new todo|
 |5 |PUT |/todos:id | A todo entry |The updated todo entry| 200(success) 400 (bad request) 404 (not found)| Update todo by ID|
+
 Implementiere nun diesen neu geforderten Endpunkt gemäss der Spezifikation in der Tabelle in Zeile 5.
 Teste den Endpunkt wiederum dann mittels Postman auf Korrektheit.
 
